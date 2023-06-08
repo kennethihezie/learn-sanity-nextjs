@@ -47,7 +47,7 @@ const client = createClient({
   useCdn: false
 })
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const query = `*[_type == 'pet']{name, "imageUrl": picture.asset->url}`
   const pets = await client.fetch(query)
 
